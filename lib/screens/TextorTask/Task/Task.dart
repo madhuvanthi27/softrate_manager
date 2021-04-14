@@ -4,9 +4,9 @@ import 'package:softrate_manager/screens/TextorTask/Task/Tasks/TaskDetails.dart'
 import 'package:softrate_manager/services/Storage.dart';
 
 class Task extends StatefulWidget {
-  String currentGroupName;
+  int currentGroupId;
 
-  Task({this.currentGroupName});
+  Task({this.currentGroupId});
 
   @override
   _TaskState createState() => _TaskState();
@@ -27,7 +27,7 @@ class _TaskState extends State<Task> {
     //Do not Touch
 
     TaskList.clear();
-    Tasksdata = data.Groups[widget.currentGroupName]['tasks'];
+    Tasksdata = data.Groups[widget.currentGroupId]['tasks'];
 
     for(int i=0;i<Tasksdata.length;i++)
     {

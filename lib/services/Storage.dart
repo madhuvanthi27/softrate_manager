@@ -3,12 +3,68 @@ import 'package:flutter/material.dart';
 
 class storage
 {
-  Map employee={
-
+  Map Users={
+      1:
+      {'Empname': 'Ganesh',
+        'groups': [1,2,3,4,5],
+        'Empbg': Colors.deepPurple,
+        'position': 'admin',
+      },
+      2:
+      {
+        'Empname': 'Avinash',
+        'groups': [1,2,3,4,5],
+        'Empbg': Colors.red,
+        'position': 'developer',
+      },
+      3:
+      {
+        'Empname': 'Santhosh',
+        'groups': [1,2,3],
+        'Empbg': Colors.indigo,
+        'position': 'developer',
+      },
+      4:
+      {
+        'Empname': 'Swathika',
+        'groups': [1,2,3,4],
+        'Empbg': Colors.amber,
+        'position': 'developer',
+      },
+      5:
+      {
+        'Empname': 'Madhu',
+        'groups': [1,2,3,4],
+        'Empbg': Colors.teal,
+        'position': 'developer',
+      },
+      6:
+      {
+        'Empname': 'Balaji',
+        'groups': [2],
+        'Empbg': Colors.blueGrey,
+        'position': 'CEO',
+      },
+      7:
+      {
+        'Empname': 'Morty',
+        'groups': [3,5],
+        'Empbg': Colors.yellow,
+        'position': 'wingman',
+      },
+      8:
+      {
+        'Empname': 'Rick',
+        'groups': [3,5],
+        'Empbg': Colors.lightGreen,
+        'position': 'scientist',
+      }
   };
   Map Groups={
-    'Flutter devs':
-    {'messages':[
+    1:
+    {
+      'groupName':'Flutter devs',
+      'messages':[
           {'sender': 'Ganesh', 'text': 'Heyy', 'bg': Colors.deepPurple},
           {'sender': 'Avinash', 'text': 'Heyyyyy', 'bg': Colors.red},
           {'sender': 'Santhosh', 'text': 'Hey', 'bg': Colors.indigo},
@@ -47,8 +103,10 @@ class storage
            ],
       'groupBg':Colors.deepPurple,
     },
-    'Softrate App dev':
-    {'messages':[
+    2:
+    {
+      'groupName':'Softrate App dev',
+      'messages':[
       {'sender': 'Balaji', 'text': 'Heyy guys !', 'bg': Colors.blueGrey},
       {'sender': 'Balaji', 'text': 'How\'s the project goin on? ', 'bg': Colors.blueGrey},
       {'sender': 'Ganesh', 'text': 'Heyy', 'bg': Colors.deepPurple},
@@ -79,8 +137,10 @@ class storage
       ],
       'groupBg':Colors.blueGrey,
     },
-    'Rick n Morty':
-    {'messages':[
+    3:
+    {
+      'groupName':'Rick n morty',
+      'messages':[
       {'sender': 'Rick', 'text': 'Hey Mortyyy', 'bg': Colors.lightGreen},
       {'sender': 'Rick', 'text': 'Check this out.', 'bg': Colors.lightGreen},
       {'sender': 'Rick', 'text': 'Wubba lubba dubb dubb', 'bg': Colors.lightGreen},
@@ -118,6 +178,20 @@ class storage
       ],
       'groupBg':Colors.lightGreen,
     },
+    4:
+    {
+      'groupName':'Flutter devs new',
+      'messages':[],
+      'tasks': [],
+      'groupBg':Colors.black,
+    },
+    5:
+    {
+      'groupName':'Infinite possiblities',
+      'messages':[],
+      'tasks':[],
+      'groupBg':Colors.cyan,
+    }
 
     };
 }

@@ -6,7 +6,7 @@ import 'package:softrate_manager/services/Storage.dart';
 
 
 class TEXT extends StatefulWidget {
-  String currentGroupName;
+  int currentGroupId;
   /*
   List<Messages> MessageList=[
     Messages(text: 'Heyy',sender: 'Ganesh',bg: Colors.deepPurple),
@@ -23,7 +23,7 @@ class TEXT extends StatefulWidget {
     Messages(text: 'One day tha agum',sender: 'Santhosh',bg: Colors.indigo),
     Messages(text: 'Mark as read',sender: 'Swathika',bg: Colors.amber),
   ];*/
-  TEXT({this.currentGroupName});
+  TEXT({this.currentGroupId});
 
   @override
   _TEXTState createState() => _TEXTState();
@@ -38,9 +38,9 @@ class _TEXTState extends State<TEXT> {
   @override
   Widget build(BuildContext context) {
 
-    print(widget.currentGroupName);
+    print(widget.currentGroupId);
     MessageList.clear();
-    messageData = details.Groups[widget.currentGroupName]['messages'];
+    messageData = details.Groups[widget.currentGroupId]['messages'];
 
     for(int i=messageData.length-1;i>=0;i--)
     {

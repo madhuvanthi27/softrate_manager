@@ -10,8 +10,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
+  int currentGroupId;
   String currentGroupName;
+  int currentUserId=1;
 
   Color textColor = Colors.grey;
   Color taskColor = Colors.grey[700];
@@ -48,11 +49,13 @@ class _HomeState extends State<Home> {
   {
     super.initState();
 
-    groups=details.Groups.keys.toList();
-    currentGroupName=groups[0];
+    groups=details.Users[currentUserId]['groups'];
+    print(groups);
+    currentGroupId=groups[0];
+    currentGroupName=details.Groups[currentGroupId]['groupName'];
     for(int i=0;i<groups.length;i++)
     {
-      groupDetails.add(Groups(groupName: groups[i],grpBg:details.Groups[groups[i]]['groupBg']));
+      groupDetails.add(Groups(groupId:groups[i],groupName: details.Groups[groups[i]]['groupName'],grpBg:details.Groups[groups[i]]['groupBg']));
     }
     print('groups');
 
@@ -60,8 +63,8 @@ class _HomeState extends State<Home> {
 
   Widget build(BuildContext context) {
 
-    TEXT textPage = TEXT(currentGroupName: currentGroupName);
-    Task taskPage = Task(currentGroupName: currentGroupName);
+    TEXT textPage = TEXT(currentGroupId: currentGroupId);
+    Task taskPage = Task(currentGroupId: currentGroupId);
 
     return Scaffold(
       backgroundColor: Colors.grey[900],
@@ -81,6 +84,7 @@ class _HomeState extends State<Home> {
                       return GestureDetector(
                         onTap: (){
                           setState(() {
+                            currentGroupId = groupDetails[index].groupId;
                             currentGroupName = groupDetails[index].groupName;
                             Navigator.pop(context);
                           });
