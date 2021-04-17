@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:softrate_manager/screens/TextorTask/Task/Tasks/BriefTask.dart';
 import 'package:softrate_manager/screens/TextorTask/Task/Tasks/TaskDetails.dart';
+import 'package:softrate_manager/screens/TextorTask/Task/noTasks.dart';
 import 'package:softrate_manager/services/Storage.dart';
 
 class Task extends StatefulWidget {
@@ -59,7 +60,7 @@ class _TaskState extends State<Task> {
 
     splitTasks(); // Function to split tasks in left and right side.
 
-    return ListView(
+    return (TaskList.isEmpty)? NoTasks() : ListView(
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.all(5.0),
