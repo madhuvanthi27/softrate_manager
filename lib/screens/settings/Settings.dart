@@ -6,12 +6,21 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Settings'),
         centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          RaisedButton(
+            onPressed: (){},
+            child: Text("Log Out"),
+          )
+        ],
       ),
     );
   }

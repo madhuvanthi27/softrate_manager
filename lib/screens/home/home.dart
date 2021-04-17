@@ -3,13 +3,19 @@ import 'package:softrate_manager/screens/TextorTask/Task/Task.dart';
 import 'package:softrate_manager/screens/TextorTask/Text/Text.dart';
 import 'package:softrate_manager/screens/groups/Groups.dart';
 import 'package:softrate_manager/services/Storage.dart';
+import 'package:softrate_manager/services/auth.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key key, this.auth}) : super(key: key);
+  final AuthBase auth;
+
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+
+
   int currentGroupId;
   String currentGroupName;
   int currentUserId=1;
@@ -171,7 +177,7 @@ class _HomeState extends State<Home> {
        actions: <Widget>[
          IconButton(
              onPressed: (){
-               Navigator.pushNamed(context, '/settings');
+               Navigator.pushNamed(context, '/settings', arguments: widget.auth);
              },
              icon: Icon(Icons.settings))
           ],
